@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECEFF4"
+    android:orientation="vertical">
+
+    <!-- BAŞLIK PANELİ: logo | başlık | Yasin HAN + dalgalanan bayrak -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:background="#0D1B2A"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/cerceve"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp">
+
+            <com.yhan.kilitekrani.LogoView
+                android:layout_width="60dp"
+                android:layout_height="60dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="KİLİT EKRANI"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="110dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:background="#99FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.15"
+                    android:text="BİLGİ KARTI"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:gravity="end"
+                android:text="Yasin\nHAN"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold|italic" />
+
+            <com.yhan.kilitekrani.FlagView
+                android:layout_width="62dp"
+                android:layout_height="56dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- ÖNİZLEME -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/kart"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView style="@style/Bolum" android:text="ÖNİZLEME" />
+
+                <ImageView
+                    android:id="@+id/preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="380dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Önizleme"
+                    android:scaleType="fitCenter" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnResim"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="#1B3A5C"
+                        android:text="🖼  RESİM SEÇ"
+                        android:textColor="#FFFFFF" />
+
+                    <Button
+                        android:id="@+id/btnResimKaldir"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="DÜZ RENK" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- BİLGİLER -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/kart"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView style="@style/Bolum" android:text="BİLGİLER" />
+
+                <EditText
+                    android:id="@+id/etBaslik"
+                    style="@style/Alan"
+                    android:hint="Üst başlık (ör: BU TELEFON BULUNURSA LÜTFEN ARAYINIZ)"
+                    android:inputType="textCapCharacters|textMultiLine" />
+
+                <EditText
+                    android:id="@+id/etAd"
+                    style="@style/Alan"
+                    android:hint="Ad Soyad"
+                    android:inputType="textPersonName|textCapWords" />
+
+                <EditText
+                    android:id="@+id/etTel1"
+                    style="@style/Alan"
+                    android:hint="Telefon"
+                    android:inputType="phone" />
+
+                <EditText
+                    android:id="@+id/etTel2"
+                    style="@style/Alan"
+                    android:hint="Yedek / acil durum telefonu (isteğe bağlı)"
+                    android:inputType="phone" />
+
+                <EditText
+                    android:id="@+id/etAdres"
+                    style="@style/Alan"
+                    android:gravity="top"
+                    android:hint="Adres"
+                    android:inputType="textPostalAddress|textMultiLine|textCapSentences"
+                    android:minLines="2" />
+
+                <EditText
+                    android:id="@+id/etNot"
+                    style="@style/Alan"
+                    android:hint="Ek not (isteğe bağlı, ör: Ödül verilecektir)"
+                    android:inputType="textMultiLine|textCapSentences" />
+            </LinearLayout>
+
+            <!-- GÖRÜNÜM -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/kart"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView style="@style/Bolum" android:text="GÖRÜNÜM" />
+
+                <TextView style="@style/Etiket" android:text="Bilgi kutusunun yeri" />
+                <RadioGroup
+                    android:id="@+id/rgKonum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RadioButton android:id="@+id/rbUst" style="@style/Secim" android:text="Üst" />
+                    <RadioButton android:id="@+id/rbOrta" style="@style/Secim" android:text="Orta" />
+                    <RadioButton android:id="@+id/rbAlt" style="@style/Secim" android:text="Alt" />
+                </RadioGroup>
+
+                <TextView style="@style/Etiket" android:text="Yazı boyutu" />
+                <SeekBar
+                    android:id="@+id/sbBoyut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100" />
+
+                <TextView style="@style/Etiket" android:text="Kutu koyuluğu (0 = şeffaf)" />
+                <SeekBar
+                    android:id="@+id/sbOpak"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100" />
+
+                <TextView style="@style/Etiket" android:text="Yazı rengi" />
+                <RadioGroup
+                    android:id="@+id/rgYazi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RadioButton android:id="@+id/rbYBeyaz" style="@style/Secim" android:text="Beyaz" />
+                    <RadioButton android:id="@+id/rbYSiyah" style="@style/Secim" android:text="Siyah" />
+                    <RadioButton android:id="@+id/rbYSari" style="@style/Secim" android:text="Sarı" />
+                </RadioGroup>
+
+                <TextView style="@style/Etiket" android:text="Kutu rengi" />
+                <RadioGroup
+                    android:id="@+id/rgKutu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RadioButton android:id="@+id/rbKSiyah" style="@style/Secim" android:text="Siyah" />
+                    <RadioButton android:id="@+id/rbKBeyaz" style="@style/Secim" android:text="Beyaz" />
+                    <RadioButton android:id="@+id/rbKLacivert" style="@style/Secim" android:text="Lacivert" />
+                    <RadioButton android:id="@+id/rbKKirmizi" style="@style/Secim" android:text="Kırmızı" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <!-- UYGULA -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/kart"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView style="@style/Bolum" android:text="UYGULA" />
+
+                <Button
+                    android:id="@+id/btnKilit"
+                    style="@style/Dugme"
+                    android:backgroundTint="#E30A17"
+                    android:text="🔒  KİLİT EKRANINA UYGULA"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btnAna"
+                    style="@style/Dugme"
+                    android:backgroundTint="#1B3A5C"
+                    android:text="🏠  ANA EKRANA UYGULA"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btnIkisi"
+                    style="@style/Dugme"
+                    android:backgroundTint="#0D1B2A"
+                    android:text="📱  İKİSİNE DE UYGULA"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btnKaydet"
+                    style="@style/Dugme"
+                    android:text="💾  GALERİYE KAYDET" />
+
+                <Button
+                    android:id="@+id/btnSistem"
+                    style="@style/Dugme"
+                    android:text="⚙  TELEFONUN KENDİ AYARIYLA UYGULA" />
+
+                <TextView
+                    android:id="@+id/tvDurum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center"
+                    android:textColor="#1B5E20"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="İpucu: Bazı telefonlar (özellikle Xiaomi / Huawei) kilit ekranını uygulamalara kapatır. Kilit ekranı değişmezse &quot;Telefonun kendi ayarıyla uygula&quot; düğmesini kullanıp açılan ekranda &quot;Kilit ekranı&quot;nı seçin."
+                    android:textColor="#5B6573"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="Tasarım ve Geliştirme\nYasin HAN"
+                android:textColor="#5B6573"
+                android:textSize="12sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
